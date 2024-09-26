@@ -1,0 +1,101 @@
+package TiendaOnline;
+
+import java.util.ArrayList;
+
+
+public class Venta {
+    private int numeroConsecutivo;
+    private Fecha fechaVenta;
+    private Cliente cliente;
+    private ArrayList<Detalle> detalles;
+    private double valorTotal;
+    private double iva;
+    private double valorTotalAPagar;
+
+    // Constructor
+    public Venta(int numeroConsecutivo, Fecha fechaVenta, Cliente cliente, double valorTotal, double iva, double valorTotalAPagar) {
+        this.numeroConsecutivo = numeroConsecutivo;
+        this.fechaVenta = fechaVenta;
+        this.cliente = cliente;
+        this.detalles = new ArrayList<>();  // Inicializar ArrayList de detalles
+        this.valorTotal = valorTotal;
+        this.iva = iva;
+        this.valorTotalAPagar = valorTotalAPagar;
+    }
+
+    // Getters y Setters
+
+    public int getNumeroConsecutivo() {
+        return numeroConsecutivo;
+    }
+
+    public void setNumeroConsecutivo(int numeroConsecutivo) {
+        this.numeroConsecutivo = numeroConsecutivo;
+    }
+
+    public Fecha getFechaVenta() {
+        return fechaVenta;
+    }
+
+    public void setFechaVenta(Fecha fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public ArrayList<Detalle> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(ArrayList<Detalle> detalles) {
+        this.detalles = detalles;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public double getValorTotalAPagar() {
+        return valorTotalAPagar;
+    }
+
+    public void setValorTotalAPagar(double valorTotalAPagar) {
+        this.valorTotalAPagar = valorTotalAPagar;
+    }
+
+
+    public void adicionarDetalle(Detalle detalle) {
+        detalles.add(detalle);
+    }
+
+    
+    public void mostrarDetalle() {
+        for (Detalle detalle : detalles) {
+            System.out.println(detalle);
+        }
+    }
+
+ 
+    public String toString() {
+        return "Venta [Numero Consecutivo=" + numeroConsecutivo + ", Fecha=" + fechaVenta + ", Cliente=" + cliente.getNombre() + 
+               ", Valor Total=" + valorTotal + ", IVA=" + iva + ", Valor Total a Pagar=" + valorTotalAPagar + "]";
+    }
+}
