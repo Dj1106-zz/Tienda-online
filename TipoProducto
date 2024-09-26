@@ -1,0 +1,38 @@
+package TiendaOnline;
+
+public class TipoProducto {
+	private int codigo;
+	private int porcentajeIVA;
+	private String descripcion;
+	public TipoProducto(int codigo, int porcentajeIVA, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.porcentajeIVA = porcentajeIVA;
+		this.descripcion = descripcion;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public int getPorcentajeIVA() {
+		return porcentajeIVA;
+	}
+	public void setPorcentajeIVA(int porcentajeIVA) {
+		this.porcentajeIVA = porcentajeIVA;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	@Override
+	public String toString() {
+		return "TipoProducto" + codigo + ", porcentajeIVA=" + porcentajeIVA + ", descripcion=" + descripcion
+				;
+	}
+	
+
+}
