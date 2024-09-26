@@ -1,0 +1,40 @@
+package TiendaOnline;
+
+import java.util.ArrayList;
+
+public class Tienda {
+
+	public static void main(String[] args) {
+	ArrayList<Producto> listaProducto = new ArrayList<>();
+	ArrayList<Venta> listaVentas = new ArrayList<>();
+	
+	TipoProducto tipo1 = new TipoProducto(10,15,"Gaseosa");
+	TipoProducto tipo2 = new TipoProducto(20,19,"Paquetes");
+	
+	Proveedor proveedor = new Proveedor ("299","Pacho");
+	 
+		Producto producto1 = new Producto ("1000","Pepsi",5.600,3,proveedor,tipo2);
+		
+		listaProducto.add(producto1);
+		listaProducto.add(producto1);
+		
+		for(Producto producto : listaProducto)
+		{
+			System.out.println(producto);
+		}
+		
+		Cliente cliente1 = new Cliente ( "10000","Juan");
+		Fecha fecha1 = new Fecha (1,02,9);
+		
+		Venta venta1 = new Venta(1000,fecha1 , cliente1,5.000,6.122,9.222);
+		Detalle detalle1 = new Detalle ( producto1,3,900000 );
+		venta1.adicionarDetalle(detalle1);
+		venta1.mostrarDetalle();
+		
+		
+		
+		
+	
+	}
+
+}
